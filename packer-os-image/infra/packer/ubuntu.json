@@ -1,13 +1,28 @@
 {
+	"variables": {
+		"proj_id": null,
+		"source_img": null,
+		"img_description": null,
+		"machine_type": null,
+		"disk_size": null,
+		"disk_type": null,
+		"network": null,
+		"tags": null
+	},
     "builders": [
         {
 		"type": "googlecompute",
-		"project_id": "test-edvegas",
+		"project_id": "{{ user `proj_id` }}",
 		"image_name": "reddit-base-{{timestamp}}",
-		"source_image": "ubuntu-1604-xenial-v20181004",
+		"source_image": "{{ user `source_img` }}",
+		"image_description": "{{ user `img_description` }}",
 		"zone": "europe-west1-b",
 		"ssh_username": "appuser",
-		"machine_type": "f1-micro"
+		"machine_type": "{{ user `machine_type` }}",
+		"disk_size": "{{ user `disk_size` }}",
+		"disk_type": "{{ user `disk_type` }}",
+		"network": "{{ user `network` }}",
+		"tags": "{{ user `tags` }}"
         }
     ],
     "provisioners": [
