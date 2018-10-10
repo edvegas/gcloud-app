@@ -2,5 +2,5 @@
 
 git clone https://github.com/Artemmkin/reddit.git
 cd ./reddit
-bundle install
+bundle install 
 puma -d
