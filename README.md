@@ -1,5 +1,5 @@
-# gcloud-app
-## PACKER
+## Tools for managing Google Cloud Platform Infrastructure
+### PACKER
 to install base VM Ubuntu 16 image on GCP by packer, go to infra/packer directory and run:
 ```
 packer build -var 'proj_id="..."' -var 'source_img="..."'... ubuntu.json
@@ -12,7 +12,7 @@ packer build -var-file=variables.json ubuntu.json
 ```
 more information is [here](https://www.packer.io/docs/templates/user-variables.html)
 
-## TERRAFORM
+### TERRAFORM
 to use IaaC by Terraform in GCP, go to infra/terraform/ and run:
 ```
 terraform apply
