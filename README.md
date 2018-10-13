@@ -11,3 +11,5 @@ or you can define variables in variables.json (any name with *.json at the end m
 packer build -var-file=variables.json ubuntu.json
 ```
 more information is [here](https://www.packer.io/docs/templates/user-variables.html)
+##TERRAFORM
+to use IaaC by Terraform in GCP, go to infra/terraform/
