@@ -15,10 +15,10 @@ more information is [here](https://www.packer.io/docs/templates/user-variables.h
 ### TERRAFORM
 to use IaaC by Terraform in GCP, go to infra/terraform/ and run:
 ```
-terraform apply
+terraform apply -var-file="secretvariables.tfvars"
 ```
-Required variables should be defined by **\*.tfvars** file(s).
-More detailed info is [here](https://www.terraform.io/intro/getting-started/variables.html)
+Required variables should be defined by **\*.tfvars** file(s), in our case it is "secretvariables.tfvars"
+More detailed info about syntax and usage is [here](https://www.terraform.io/intro/getting-started/variables.html)
 
 **outputs.tf** used to get external ip address of created instance in Google Cloud.
 Get output variables after applying terraform:
