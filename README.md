@@ -12,7 +12,7 @@ packer build -var-file=variables.json ubuntu.json
 ```
 more information is [here](https://www.packer.io/docs/templates/user-variables.html)
 
-##TERRAFORM
+## TERRAFORM
 to use IaaC by Terraform in GCP, go to infra/terraform/ and run:
 ```
 terraform apply
