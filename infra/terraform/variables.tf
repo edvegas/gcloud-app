@@ -22,3 +22,7 @@ variable disk_image {
 variable app_disk_image {
 	description  = "Disk image for reddit app"
 }
+
+variable db_disk_image {
+	description  = "Disk image for reddit database"
+}
