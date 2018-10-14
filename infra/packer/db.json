@@ -13,7 +13,7 @@
         {
 		"type": "googlecompute",
 		"project_id": "{{ user `proj_id` }}",
-		"image_name": "reddit-base-{{timestamp}}",
+		"image_name": "reddit-dbbase-{{timestamp}}",
 		"source_image": "{{ user `source_img` }}",
 		"image_description": "{{ user `img_description` }}",
 		"zone": "europe-west1-b",
