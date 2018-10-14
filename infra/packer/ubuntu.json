@@ -4,7 +4,7 @@
 		"source_img": null,
 		"img_description": "reddit-app",
 		"machine_type": null,
-		"disk_size": 10,
+		"disk_size": "10",
 		"disk_type": "pd-standard",
 		"network": "default",
 		"tags": null
