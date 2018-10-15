@@ -19,3 +19,10 @@ module "vpc" {
   source        = "../modules/vpc"
   source_ranges = ["87.117.180.24/32"]
 }
+
+terraform {
+  backend "gcs" {
+    bucket = "terraform-statefiles-all"
+    prefix = "prod"
+  }
+}
