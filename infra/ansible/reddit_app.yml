@@ -54,10 +54,36 @@
 
 # Deploy reddit app
 - name: "Reddit App: Deploy application"
-  hosts: reddit_app
+  hosts: all
   gather_facts: no
 
   tasks:
-  - name: Remove me after adding real things
-    debug:
-      msg: "В этом сценарии нужно добавить модули для деплоя приложения, после можно удалить вызов модуля debug, который выводит это сообщение"
+  - name: Download GIT repository
+    git:
+      repo: https://github.com/Artemmkin/reddit.git
+      dest: /home/ubuntu/reddit-app/
+
+  - name: Install gem libs 
+    bundler:
+      chdir: /home/ubuntu/reddit-app/
+      state: present
+
+- name: "Reddit App: Start Puma"
+  hosts: all
+  gather_facts: no
+  become: yes
+
+  tasks:
+  - name: Install puma service
+    copy:
+      src: /tmp/puma.service
+      dest: /etc/systemd/system/puma.service
+      owner: root
+      group: root
+      mode: 0644
+
+  - name: Start and enable puma service
+    service:
+      name: puma
+      state: started
+      enabled: yes
