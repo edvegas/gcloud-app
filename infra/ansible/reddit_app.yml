@@ -54,7 +54,7 @@
 
 # Deploy reddit app
 - name: "Reddit App: Deploy application"
-  hosts: all
+  hosts: reddit-app
   gather_facts: no
 
   tasks:
@@ -69,7 +69,7 @@
       state: present
 
 - name: "Reddit App: Start Puma"
-  hosts: all
+  hosts: reddit-app
   gather_facts: no
   become: yes
 
