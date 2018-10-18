@@ -5,5 +5,3 @@
 .terraform/
 *variables.json
 *.retry
-*hosts
-*ansible.cfg
