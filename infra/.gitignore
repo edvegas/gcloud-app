@@ -5,3 +5,7 @@
 .terraform/
 *variables.json
 *.retry
+
+# Vagrant
+.vagrant/
+*.logs
