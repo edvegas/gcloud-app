@@ -1,4 +1,7 @@
 ---
+- name: Show info about the env this host belongs to
+  debug:
+    msg: "This host is in {{ env }} environment!"
 - name: Fetch the latest version of application code
   git:
     repo: https://github.com/Artemmkin/reddit.git
