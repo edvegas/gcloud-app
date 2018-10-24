@@ -1,0 +1,12 @@
+---
+- name: Fetch the latest version of application code
+  git:
+    repo: https://github.com/Artemmkin/reddit.git
+    dest: /home/appuser/reddit
+    version: monolith
+  notify: restart puma
+
+- name: Bundle Install
+  bundler:
+    state: present
+    chdir: /home/appuser/reddit

@@ -1,23 +1,5 @@
 ---
 - name: Deploy reddit application
   hosts: app
-  tasks:
-    - name: Fetch the latest version of application code
-      git:
-        repo: https://github.com/Artemmkin/reddit.git
-        dest: /home/appuser/reddit
-        version: monolith
-      notify: restart puma
-
-    - name: Bundle Install
-      bundler:
-        state: present
-        chdir: /home/appuser/reddit
-      tags: deploy-tag
-
-  handlers:
-    - name: restart puma
-      become: yes
-      systemd:
-        name: puma
-        state: restarted
+  roles:
+    - deploy
