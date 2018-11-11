@@ -3,3 +3,6 @@ appserver ansible_ssh_host=35.240.110.166
 
 [db]
 dbserver ansible_ssh_host=35.190.201.123
+
+[gitlab]
+gitlabci ansible_ssh_host=35.204.204.219

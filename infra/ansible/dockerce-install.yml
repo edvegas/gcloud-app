@@ -1,0 +1,29 @@
+---
+- name: Install Docker CE
+  hosts: gitlab
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: Install necessary packages to use repo over HTTPS
+      apt:
+        name: "{{ packages }}"
+        update_cache: yes 
+      vars:
+        packages:
+        - apt-transport-https
+        - ca-certificates
+        - curl
+        - software-properties-common
+
+    - name: Add Docker's official GPG key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg  
+
+    - name: Add Docker Stable Repository
+      apt_repository:
+        repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable
+
+    - name: Install Docker CE
+      apt:
+        name: docker-ce
+        update_cache: yes
